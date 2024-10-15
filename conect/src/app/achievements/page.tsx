@@ -55,7 +55,7 @@ export default function AchievementsPage() {
   return (
     <>
       <Navbar />
-      <h1 className="text-center text-4xl my-6 font-bold">Achievements</h1>
+      <h1 className="text-center text-4xl my-6 font-bold">Accomplishments</h1>
       <div className="grid grid-cols-1 gap-4 p-4">
         {achievements.map((achievement, index) => (
           <Card
@@ -78,10 +78,13 @@ export default function AchievementsPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="mb-1">
-                  <span className="font-semibold"> Date: </span>{" "}
-                  {achievement.date}
-                </p>
+                {achievement.time && achievement.date && 
+                  (
+                  <p className="mb-1">
+                    <span className="font-semibold"> Time: </span> {achievement.time}
+                  </p>
+                  )
+                }
                 <p className="mb-1">
                   <span className="font-semibold"> Time: </span>{" "}
                   {achievement.time}
